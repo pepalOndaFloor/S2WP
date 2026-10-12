@@ -1,0 +1,52 @@
+<!--Write a program to Distinguish between left and right mouse click with jQuery 
+i. e. left will show message as AngularJs and right will show the message as JQuery-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mouse Click Events</title>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+    <h2>Distinguish Left and Right Mouse Click</h2>
+
+    <div id="box" style="border: 2px solid black; padding: 30px; width: 300px;">
+        Click here using the left or right mouse button.
+    </div>
+
+    <p id="message"></p>
+
+    <script>
+        $(document).ready(function() {
+
+            $("#box").on("mousedown", function(event) {
+
+                if (event.which == 1) {
+                    $("#message").text("AngularJs/left ");
+                }
+                else if(event.which == 2){
+                    $('#message').text("Middle Scroll wheel button");
+                }
+                else if (event.which == 3) {
+                    $("#message").text("JQuery/right");
+                }
+                
+                else if(event.which == 4){
+                    $('#message').text("side lower button");
+                }
+                else if(event.which == 5){
+                    $('#message').text("sider upper button");
+                }
+            });
+
+            $("#box").on("contextmenu", function(event) {
+                event.preventDefault();
+            });
+
+        });
+    </script>
+
+</body>
+</html>
