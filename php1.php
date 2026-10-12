@@ -1,3 +1,4 @@
+<!--Write php code to connect to mySql database, fire a select query and display the result in HTML table.-->
 <?php
 // Connect to MySQL database
 $con = mysqli_connect("localhost", "root", "", "college");//hostname,username,password,dbname
@@ -38,6 +39,3 @@ if (mysqli_num_rows($result) > 0) {
 // Close connection
 mysqli_close($conn);
 ?>
-
-</body>
-</html>
