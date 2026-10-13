@@ -1,0 +1,30 @@
+<!--Write a program to Limit character input in the textarea including count using jQuery-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Character Limit</title>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+    <h2>Character Limit in Textarea</h2>
+
+    <textarea id="message" rows="5" cols="40"
+              maxlength="100"
+              placeholder="Enter your message..."></textarea>
+
+    <p>Characters: <span id="count">0</span> / 100</p>
+
+    <script>
+        $(document).ready(function() {
+            $("#message").on("input", function() {
+                var length = $(this).val().length;
+                $("#count").text(length);
+            });
+        });
+    </script>
+
+</body>
+</html>
