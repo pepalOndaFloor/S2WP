@@ -1,0 +1,38 @@
+<!--Write a program to enter your e-mail address in the input field. 
+AngularJS will display an error message if the address is not an e-mail.-->
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>Email Validation</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-controller="myCtrl">
+
+    <h3>Email Validation</h3>
+
+    <form name="emailForm" novalidate>
+        <input type="email"
+               name="email"
+               ng-model="userEmail"
+               required
+               placeholder="Enter your email">
+
+        <span ng-show="emailForm.email.$dirty &&
+                       emailForm.email.$invalid">
+            Please enter a valid email address.
+        </span>
+        <span ng-show ="emailForm.email.$valid">
+            Valid Email Address
+        </span>
+    </form>
+
+    <script>
+        var app = angular.module("myApp", []);
+
+        app.controller("myCtrl", function($scope) {
+            $scope.userEmail = "";
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!--Write an angularJs Program which display a button 
+and count how many time the user clicks the button.-->
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>Button Click Counter</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-controller="myCtrl">
+
+    <h3>Button Click Counter</h3>
+
+    <button ng-click="count = count + 1">
+        Click Me
+    </button>
+
+    <p>Button clicked {{ count }} times.</p>
+
+    <script>
+        var app = angular.module("myApp", []);
+
+        app.controller("myCtrl", function($scope) {
+            $scope.count = 0;
+        });
+    </script>
+
+</body>
+</html>

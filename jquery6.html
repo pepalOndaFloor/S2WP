@@ -1,0 +1,32 @@
+<!--Write a program to count every element (including head, body, etc.) 
+in the document Using jQuery.-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Count Elements</title>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+    <h2>Count Every Element</h2>
+
+    <p>This is the first paragraph.</p>
+    <p>This is the second paragraph.</p>
+
+    <button id="btn">Count Elements</button>
+
+    <p id="result"></p>
+
+    <script>
+        $(document).ready(function() {
+            $("#btn").click(function() {
+                var count = $("*").length;
+                $("#result").text("Total elements: " + count);
+            });
+        });
+    </script>
+
+</body>
+</html>
