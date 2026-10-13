@@ -1,0 +1,37 @@
+<!--Write program to disabled the button element using Angular JS.-->
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>Disable Button</title>
+
+    <!-- AngularJS CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-controller="myCtrl">
+
+    <h2>Disable Button Using AngularJS</h2>
+
+    <button ng-disabled="isDisabled">
+        Click Me
+    </button>
+
+    <br><br>
+
+    <button ng-click="isDisabled = true">
+        Disable Button
+    </button>
+
+    <button ng-click="isDisabled = false">
+        Enable Button
+    </button>
+
+    <script>
+        var app = angular.module("myApp", []);
+
+        app.controller("myCtrl", function($scope) {
+            $scope.isDisabled = false;
+        });
+    </script>
+
+</body>
+</html>

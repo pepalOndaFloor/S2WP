@@ -1,0 +1,40 @@
+<!--Construct a program to Filter input text ng-repeat values according to ng-model. 
+This filter must show the names of only the matching city.-->
+<!--already done in angular3.html-->
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>Filter City Names</title>
+
+    <!-- AngularJS CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-controller="myCtrl">
+
+    <h2>Search City</h2>
+
+    <input type="text" ng-model="searchCity"
+           placeholder="Enter city name">
+
+    <ul>
+        <li ng-repeat="city in cities | filter:searchCity">
+            {{ city }}
+        </li>
+    </ul>
+
+    <script>
+        var app = angular.module("myApp", []);
+
+        app.controller("myCtrl", function($scope) {
+            $scope.cities = [
+                "Pune",
+                "Mumbai",
+                "Delhi",
+                "Chennai",
+                "Nagpur"
+            ];
+        });
+    </script>
+
+</body>
+</html>
